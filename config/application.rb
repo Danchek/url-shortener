@@ -22,6 +22,7 @@ module UrlShortener
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    Rails.application.routes.default_url_options[:host] = ENV.fetch('HOST', 'http://127.0.0.1:3000')
 
     # Configuration for the application, engines, and railties goes here.
     #

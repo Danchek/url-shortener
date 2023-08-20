@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  # In case of we need to make url shorter, we may remove all extra namespaces from url
+  namespace :api do
+    namespace :v1 do
+      resources :url_shortener, only: [:create, :show]
+    end
+  end
 end

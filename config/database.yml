@@ -23,7 +23,10 @@ default: &default
 
 development:
   <<: *default
-  database: url_shortener_development
+  host: localhost
+  database: <%= ENV.fetch('DEV_DATABASE_NAME') %>
+  username: <%= ENV.fetch('DEV_DATABASE_USER') %>
+  password: <%= ENV.fetch('DEV_DATABASE_PASSWORD') %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -57,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: url_shortener_test
+  database: Make_AS_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -81,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: url_shortener_production
-  username: url_shortener
-  password: <%= ENV["URL_SHORTENER_DATABASE_PASSWORD"] %>
+  database: Make_AS_production
+  username: Make_AS
+  password: <%= ENV["MAKE_AS_DATABASE_PASSWORD"] %>

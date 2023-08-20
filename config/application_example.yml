@@ -1,0 +1,3 @@
+DEV_DATABASE_NAME: 'database_name'
+DEV_DATABASE_USER: 'database_user'
+DEV_DATABASE_PASSWORD: 'user_password'
